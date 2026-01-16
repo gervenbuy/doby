@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豆比手語 Doubi Sign - B2B 企業專屬方案</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom Animations to mimic React transitions */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .step-content {
+            display: none; /* Initially hide all steps */
+        }
+        .step-content.active {
+            display: block; /* Show active step */
+        }
+        /* Custom scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-slate-900">
+
+    <!-- 1. Hero Section -->
+    <div class="relative bg-slate-900 text-white overflow-hidden min-h-[600px] flex items-center">
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 opacity-20 bg-teal-900/40 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/80 to-slate-50"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center text-center z-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-teal-500/20 text-teal-300 text-sm font-semibold mb-6 border border-teal-500/30">
+                B2B 企業專屬方案
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                打造共融職場，<br class="hidden md:block" />
+                看見 <span class="text-teal-400">聲音的力量</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mb-10">
+                豆比手語提供全方位的企業解決方案。從 ESG 友善職場培訓，
+                到結合 AI 動畫與形象歌曲的創意行銷，協助您的品牌展現多元包容的價值。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button onclick="scrollToForm()" class="px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold rounded-lg transition-all shadow-lg hover:shadow-teal-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                    立即諮詢 / 索取報價 <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <button class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-lg backdrop-blur-sm transition-all border border-white/20">
+                    了解更多服務
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Services Feature Section -->
+    <div class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">我們為企業提供的兩大核心服務</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    無論是內部的人才培育，還是對外的品牌形象建立，我們都能提供最專業的手語相關整合服務。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Training Card -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="accessibility" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">員工手語培訓</h3>
+                    <p class="text-slate-600 mb-6 h-12">
+                        針對醫療、金融、服務業量身打造的客製化課程。協助企業落實 ESG 指標，建立友善無障礙的服務環境。
+                    </p>
+                    <div class="space-y-3 pt-4 border-t border-slate-100">
+                        <div class="flex items-center gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4 flex-shrink-0"></i>
+                            <span>基礎生活手語 & 聾人文化</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4 flex-shrink-0"></i>
+                            <span>產業專業術語 (醫療/金融/餐飲)</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4 flex-shrink-0"></i>
+                            <span>內部溝通與社團活動帶領</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative Card -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="sparkles" class="text-purple-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">形象影音與創意服務</h3>
+                    <p class="text-slate-600 mb-6 h-12">
+                        結合音樂、視覺設計與最新的 AI 技術。打造獨一無二的企業形象歌曲與手語動畫廣告，抓住社群目光。
+                    </p>
+                    <div class="space-y-3 pt-4 border-t border-slate-100">
+                        <div class="flex items-center gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="text-purple-500 w-4 h-4 flex-shrink-0"></i>
+                            <span>企業形象歌曲 / 廣告 Jingle 製作</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="text-purple-500 w-4 h-4 flex-shrink-0"></i>
+                            <span>AI 動畫結合手語視覺設計</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-600">
+                            <i data-lucide="check-circle-2" class="text-purple-500 w-4 h-4 flex-shrink-0"></i>
+                            <span>短影音 (Reels/Shorts) 行銷素材</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Form Section -->
+    <div id="form-container" class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Default View (Form) -->
+            <div id="main-form-view">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-2">立即諮詢方案</h2>
+                    <p class="text-slate-500">簡單填寫需求，我們將為您提供客製化建議與報價</p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between mb-2 px-2 text-xs font-medium">
+                        <span id="label-step-1" class="hidden sm:block text-teal-600">基本資料</span>
+                        <span id="label-step-2" class="hidden sm:block text-slate-300">需求選擇</span>
+                        <span id="label-step-3" class="hidden sm:block text-slate-300">細節填寫</span>
+                        <span id="label-step-4" class="hidden sm:block text-slate-300">預算規劃</span>
+                        <span id="label-step-5" class="hidden sm:block text-slate-300">確認送出</span>
+                    </div>
+                    <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                        <div id="progress-bar" class="h-full bg-teal-500 transition-all duration-500 ease-out" style="width: 20%"></div>
+                    </div>
+                    <div class="text-right text-xs text-slate-400 mt-1 sm:hidden">
+                        步驟 <span id="mobile-step-num">1</span> / 5
+                    </div>
+                </div>
+
+                <!-- Step 1: Basic Info -->
+                <div id="step-1" class="step-content active animate-fadeIn space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">公司/單位名稱 <span class="text-red-500">*</span></label>
+                            <input type="text" id="companyName" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition" placeholder="例如：豆比科技有限公司">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">產業類別 <span class="text-red-500">*</span></label>
+                            <select id="industry" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none bg-white">
+                                <option value="">請選擇...</option>
+                                <option value="finance">金融保險業</option>
+                                <option value="medical">醫療護理 / 長照機構</option>
+                                <option value="service">餐飲 / 零售服務業</option>
+                                <option value="transport">交通運輸 / 觀光旅遊</option>
+                                <option value="gov">公家機關 / 教育單位</option>
+                                <option value="general">一般企業 (科技、傳產等)</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">聯絡人姓名 <span class="text-red-500">*</span></label>
+                            <input type="text" id="contactName" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">職稱 / 部門 <span class="text-slate-400 text-xs">(選填)</span></label>
+                            <input type="text" id="department" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none" placeholder="例如：人資部 經理">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">聯絡電話 <span class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">聯絡 Email <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Needs Selection -->
+                <div id="step-2" class="step-content animate-fadeIn space-y-6">
+                    <h3 class="text-xl font-semibold text-slate-800 text-center mb-6">請問貴單位本次主要的詢問方向是？(可複選)</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Training Option -->
+                        <div id="opt-training" onclick="toggleNeed('training')" class="cursor-pointer p-6 rounded-xl border-2 border-slate-200 hover:border-teal-300 hover:bg-white transition-all">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div id="icon-training" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 transition-colors">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="font-bold text-lg">員工手語培訓</h4>
+                            </div>
+                            <p class="text-slate-600 text-sm">內部溝通、櫃台服務SOP手語、ESG/DEI 講座、社團活動等。</p>
+                        </div>
+
+                        <!-- Creative Option -->
+                        <div id="opt-creative" onclick="toggleNeed('creative')" class="cursor-pointer p-6 rounded-xl border-2 border-slate-200 hover:border-purple-300 hover:bg-white transition-all">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div id="icon-creative" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 transition-colors">
+                                    <i data-lucide="video" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="font-bold text-lg">形象影音/創意素材</h4>
+                            </div>
+                            <p class="text-slate-600 text-sm">企業形象歌曲、AI 手語動畫、廣告 Jingle、品牌視覺識別等。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Details -->
+                <div id="step-3" class="step-content animate-fadeIn space-y-8">
+                    <!-- Dynamic Content inserted by JS based on Step 2 -->
+                    <div id="section-training" class="hidden bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h4 class="text-lg font-bold text-teal-800 mb-4 flex items-center gap-2">
+                            <i data-lucide="users" class="w-5 h-5"></i> 手語培訓細節需求
+                        </h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">主要目的 (可複選)</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-slate-200">
+                                        <input type="checkbox" name="trainingPurpose" value="提升服務品質" class="rounded text-teal-500 focus:ring-teal-500"> 提升服務品質
+                                    </label>
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-slate-200">
+                                        <input type="checkbox" name="trainingPurpose" value="內部員工溝通" class="rounded text-teal-500 focus:ring-teal-500"> 內部員工溝通
+                                    </label>
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-slate-200">
+                                        <input type="checkbox" name="trainingPurpose" value="ESG/DEI 企業文化" class="rounded text-teal-500 focus:ring-teal-500"> ESG/DEI 企業文化
+                                    </label>
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-slate-200">
+                                        <input type="checkbox" name="trainingPurpose" value="員工福利/社團" class="rounded text-teal-500 focus:ring-teal-500"> 員工福利/社團
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">預計人數</label>
+                                    <select id="trainingSize" class="w-full p-2 border border-slate-300 rounded focus:ring-teal-500 outline-none bg-white">
+                                        <option value="">請選擇</option>
+                                        <option value="1-5">1~5人 (家教/小組)</option>
+                                        <option value="6-20">6~20人 (工作坊)</option>
+                                        <option value="21-50">21~50人 (中型講座)</option>
+                                        <option value="50+">50人以上 (大型講座)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">偏好形式</label>
+                                    <select id="trainingFormat" class="w-full p-2 border border-slate-300 rounded focus:ring-teal-500 outline-none bg-white">
+                                        <option value="">請選擇</option>
+                                        <option value="workshop">單次體驗工作坊</option>
+                                        <option value="short-term">短期密集班 (4-8堂)</option>
+                                        <option value="long-term">長期帶狀課程</option>
+                                        <option value="online">線上視訊</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="section-creative" class="hidden bg-purple-50 p-6 rounded-xl border border-purple-200">
+                        <h4 class="text-lg font-bold text-purple-800 mb-4 flex items-center gap-2">
+                            <i data-lucide="music" class="w-5 h-5"></i> 影音創意方案選擇
+                        </h4>
+                        <div class="space-y-6">
+                            <!-- Plan A -->
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-bold text-slate-800 mb-2">方案 A：純形象歌曲製作</h5>
+                                <p class="text-xs text-slate-500 mb-3">打造專屬品牌旋律與歌詞，強化聽覺記憶。</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <!-- Radio buttons implemented as labels -->
+                                    <label class="plan-a-opt px-3 py-2 text-sm rounded border cursor-pointer transition bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100">
+                                        <input type="radio" name="planA_Music" value="10-15秒 (Slogan)" class="hidden"> 10-15秒 (Slogan)
+                                    </label>
+                                    <label class="plan-a-opt px-3 py-2 text-sm rounded border cursor-pointer transition bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100">
+                                        <input type="radio" name="planA_Music" value="30秒 (標準廣告)" class="hidden"> 30秒 (標準廣告)
+                                    </label>
+                                    <label class="plan-a-opt px-3 py-2 text-sm rounded border cursor-pointer transition bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100">
+                                        <input type="radio" name="planA_Music" value="1分鐘 (完整主題曲)" class="hidden"> 1分鐘 (完整主題曲)
+                                    </label>
+                                    <label class="plan-a-opt px-3 py-2 text-sm rounded border cursor-pointer transition bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100">
+                                        <input type="radio" name="planA_Music" value="暫不需要" class="hidden"> 暫不需要
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Plan B -->
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-purple-100">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <h5 class="font-bold text-slate-800">方案 B：形象歌＋AI動畫＋手語視覺</h5>
+                                    <span class="px-2 py-0.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs rounded-full">熱門推薦</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mb-3">結合 AI 生成動畫與專業手語視覺設計，全方位感官體驗。</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <label class="plan-b-opt px-3 py-2 text-sm rounded border cursor-pointer transition bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100">
+                                        <input type="radio" name="planB_AI" value="10-15秒 (Reels/Shorts)" class="hidden"> 10-15秒 (Reels/Shorts)
+                                    </label>
+                                    <label class="plan-b-opt px-3 py-2 text-sm rounded border cursor-pointer transition bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100">
+                                        <input type="radio" name="planB_AI" value="30秒 (標準廣告)" class="hidden"> 30秒 (標準廣告)
+                                    </label>
+                                    <label class="plan-b-opt px-3 py-2 text-sm rounded border cursor-pointer transition bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100">
+                                        <input type="radio" name="planB_AI" value="1分鐘 (完整影片)" class="hidden"> 1分鐘 (完整影片)
+                                    </label>
+                                    <label class="plan-b-opt px-3 py-2 text-sm rounded border cursor-pointer transition bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100">
+                                        <input type="radio" name="planB_AI" value="暫不需要" class="hidden"> 暫不需要
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Usage -->
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">主要用途 (可複選)</label>
+                                <div class="flex flex-wrap gap-2">
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-purple-300 transition">
+                                        <input type="checkbox" name="creativeUsage" value="社群廣告 (FB/IG/YT)" class="rounded text-purple-500 focus:ring-purple-500"> 社群廣告 (FB/IG/YT)
+                                    </label>
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-purple-300 transition">
+                                        <input type="checkbox" name="creativeUsage" value="官網形象" class="rounded text-purple-500 focus:ring-purple-500"> 官網形象
+                                    </label>
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-purple-300 transition">
+                                        <input type="checkbox" name="creativeUsage" value="線下門市播放" class="rounded text-purple-500 focus:ring-purple-500"> 線下門市播放
+                                    </label>
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-purple-300 transition">
+                                        <input type="checkbox" name="creativeUsage" value="內部尾牙/活動" class="rounded text-purple-500 focus:ring-purple-500"> 內部尾牙/活動
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Budget & Memo -->
+                <div id="step-4" class="step-content animate-fadeIn space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">預算規劃模式 <span class="text-red-500">*</span></label>
+                            <select id="budget" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none bg-white">
+                                <option value="">請選擇...</option>
+                                <option value="fixed">已有專案預算</option>
+                                <option value="flexible">預算彈性，請提供報價單</option>
+                                <option value="govt">依據公部門講師費標準</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">期望開始時間</label>
+                            <input type="text" id="startDate" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none" placeholder="例如：2023年11月 或 下個月">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">其他備註或需求</label>
+                        <textarea id="memo" rows="4" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none" placeholder="若有特殊需求、指定講師或既有吉祥物設定，請在此說明..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Step 5: Preview & Submit -->
+                <div id="step-5" class="step-content animate-fadeIn space-y-6">
+                    <h3 class="text-xl font-bold text-slate-800 text-center mb-6 flex items-center justify-center gap-2">
+                        <i data-lucide="file-text" class="text-teal-500 w-6 h-6"></i>
+                        確認您的需求資訊
+                    </h3>
+                    
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4 text-sm shadow-inner">
+                        <div class="grid md:grid-cols-2 gap-4 pb-4 border-b border-slate-200">
+                            <div><span class="text-slate-500">公司名稱：</span><br/><span id="preview-companyName" class="font-medium text-slate-800 text-base">-</span></div>
+                            <div><span class="text-slate-500">聯絡人：</span><br/><span id="preview-contactName" class="font-medium text-slate-800 text-base">-</span></div>
+                            <div><span class="text-slate-500">Email：</span><br/><span id="preview-email" class="font-medium text-slate-800">-</span></div>
+                            <div><span class="text-slate-500">電話：</span><br/><span id="preview-phone" class="font-medium text-slate-800">-</span></div>
+                        </div>
+                        
+                        <div>
+                            <span class="text-slate-500 block mb-2">需求類別：</span>
+                            <div id="preview-needs" class="flex gap-2 flex-wrap">
+                                <!-- Dynamic Badges -->
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4 pt-2">
+                            <div><span class="text-slate-500">預算模式：</span><br/><span id="preview-budget" class="font-medium text-slate-800">-</span></div>
+                            <div><span class="text-slate-500">期望時間：</span><br/><span id="preview-startDate" class="font-medium text-slate-800">-</span></div>
+                        </div>
+                        
+                        <div class="pt-2">
+                            <span class="text-slate-500 block mb-1">備註：</span>
+                            <div id="preview-memo" class="bg-white p-3 rounded border border-slate-200 text-slate-600 italic">無</div>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-400 text-center">
+                        按下「確認送出」後，即代表您同意我們使用上述資訊進行報價評估。<br/>
+                        我們將於 3 個工作天內由專人透過 Email 或電話與您聯繫。
+                    </p>
+                </div>
+
+                <!-- Error Message -->
+                <div id="error-msg-container" class="hidden mt-4 p-3 bg-red-50 text-red-600 text-sm rounded-lg items-center gap-2 animate-pulse">
+                    <div class="w-1.5 h-1.5 rounded-full bg-red-600"></div>
+                    <span id="error-msg-text"></span>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <button id="btn-prev" onclick="changeStep(-1)" class="hidden flex items-center gap-2 px-6 py-2.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-50 transition">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> 上一步
+                    </button>
+                    <!-- Spacer for layout when prev button hidden -->
+                    <div id="spacer" class="block"></div> 
+
+                    <button id="btn-next" onclick="changeStep(1)" class="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition shadow-lg shadow-slate-200">
+                        下一步 <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                    
+                    <button id="btn-submit" onclick="submitForm()" class="hidden flex items-center gap-2 px-8 py-3 rounded-lg bg-teal-500 text-white font-bold hover:bg-teal-400 transition shadow-lg shadow-teal-200 hover:shadow-teal-300">
+                        確認送出 <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Success View (Initially Hidden) -->
+            <div id="success-view" class="hidden text-center py-12 animate-fadeIn">
+                <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="send" class="text-green-600 w-12 h-12"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-slate-800 mb-4">詢問已送出！</h3>
+                <p class="text-slate-600 text-lg mb-8 max-w-lg mx-auto">
+                    感謝您對豆比手語的關注。<br/>
+                    我們已經收到您的需求，將盡快安排專人為您服務。
+                </p>
+                <button onclick="window.location.reload()" class="px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition">
+                    返回首頁
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 4. Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">豆比手語 Doubi Sign</h4>
+                <p class="mb-4">致力於推廣手語文化，透過創意與科技，拉近聽見與被聽見的距離。</p>
+            </div>
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">聯絡我們</h4>
+                <div class="space-y-2">
+                    <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> 02-1234-5678</p>
+                    <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> service@doubisign.com</p>
+                    <p class="flex items-center gap-2"><i data-lucide="building-2" class="w-4 h-4"></i> 台北市信義區創意路 101 號</p>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white text-lg font-bold mb-4">服務項目</h4>
+                <ul class="space-y-2">
+                    <li>企業手語培訓</li>
+                    <li>ESG/DEI 專案合作</li>
+                    <li>形象廣告歌曲製作</li>
+                    <li>AI 手語動畫設計</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-slate-800 text-center text-xs">
+            &copy; <span id="year"></span> Doubi Sign Language Service. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // --- Initialization ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+        lucide.createIcons();
+
+        // --- State Management ---
+        let currentStep = 1;
+        const totalSteps = 5;
+        const formData = {
+            needs: []
+        };
+
+        // --- Event Listeners & Logic ---
+        function scrollToForm() {
+            document.getElementById('form-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toggle logic for Step 2 Cards
+        function toggleNeed(type) {
+            const index = formData.needs.indexOf(type);
+            const element = document.getElementById(`opt-${type}`);
+            const icon = document.getElementById(`icon-${type}`);
+            const iconElement = icon.querySelector('i');
+            
+            if (index === -1) {
+                // Add
+                formData.needs.push(type);
+                // Styles for Active state
+                element.classList.remove('border-slate-200');
+                element.classList.add(type === 'training' ? 'border-teal-500' : 'border-purple-500');
+                element.classList.add(type === 'training' ? 'bg-teal-50' : 'bg-purple-50');
+                element.classList.add(type === 'training' ? 'ring-1' : 'ring-1');
+                element.classList.add(type === 'training' ? 'ring-teal-500' : 'ring-purple-500');
+                
+                icon.classList.remove('bg-slate-100', 'text-slate-500');
+                icon.classList.add(type === 'training' ? 'bg-teal-500' : 'bg-purple-500');
+                icon.classList.add('text-white');
+            } else {
+                // Remove
+                formData.needs.splice(index, 1);
+                // Styles for Inactive state
+                element.classList.add('border-slate-200');
+                element.classList.remove(type === 'training' ? 'border-teal-500' : 'border-purple-500');
+                element.classList.remove(type === 'training' ? 'bg-teal-50' : 'bg-purple-50');
+                element.classList.remove(type === 'training' ? 'ring-1' : 'ring-1');
+                element.classList.remove(type === 'training' ? 'ring-teal-500' : 'ring-purple-500');
+
+                icon.classList.add('bg-slate-100', 'text-slate-500');
+                icon.classList.remove(type === 'training' ? 'bg-teal-500' : 'bg-purple-500');
+                icon.classList.remove('text-white');
+            }
+            hideError();
+        }
+
+        // Handle Radio Buttons for Plan A and B (Visual styling sync)
+        document.querySelectorAll('input[name="planA_Music"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                document.querySelectorAll('.plan-a-opt').forEach(el => {
+                    el.classList.remove('bg-purple-500', 'text-white', 'border-purple-500');
+                    el.classList.add('bg-slate-50', 'text-slate-600', 'border-slate-200');
+                });
+                const label = e.target.parentElement;
+                label.classList.remove('bg-slate-50', 'text-slate-600', 'border-slate-200');
+                label.classList.add('bg-purple-500', 'text-white', 'border-purple-500');
+            });
+        });
+
+        document.querySelectorAll('input[name="planB_AI"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                document.querySelectorAll('.plan-b-opt').forEach(el => {
+                    el.classList.remove('bg-purple-500', 'text-white', 'border-purple-500');
+                    el.classList.add('bg-slate-50', 'text-slate-600', 'border-slate-200');
+                });
+                const label = e.target.parentElement;
+                label.classList.remove('bg-slate-50', 'text-slate-600', 'border-slate-200');
+                label.classList.add('bg-purple-500', 'text-white', 'border-purple-500');
+            });
+        });
+
+        function changeStep(direction) {
+            if (direction === 1 && !validateStep(currentStep)) return;
+
+            currentStep += direction;
+            if (currentStep < 1) currentStep = 1;
+            if (currentStep > totalSteps) currentStep = totalSteps;
+
+            updateUI();
+            
+            // Scroll to top of form
+            document.getElementById('form-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function validateStep(step) {
+            hideError();
+            if (step === 1) {
+                const requiredIds = ['companyName', 'contactName', 'phone', 'email', 'industry'];
+                for (let id of requiredIds) {
+                    if (!document.getElementById(id).value.trim()) {
+                        showError('請填寫所有必填欄位 (*) ');
+                        return false;
+                    }
+                }
+            }
+            if (step === 2) {
+                if (formData.needs.length === 0) {
+                    showError('請至少選擇一項服務需求');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function showError(msg) {
+            const container = document.getElementById('error-msg-container');
+            const text = document.getElementById('error-msg-text');
+            text.textContent = msg;
+            container.classList.remove('hidden');
+            container.classList.add('flex');
+        }
+
+        function hideError() {
+            document.getElementById('error-msg-container').classList.add('hidden');
+            document.getElementById('error-msg-container').classList.remove('flex');
+        }
+
+        function updateUI() {
+            // 1. Hide all steps, show current
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+
+            // 2. Update Progress Bar
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            
+            // Update labels color
+            for (let i = 1; i <= totalSteps; i++) {
+                const label = document.getElementById(`label-step-${i}`);
+                if (i <= currentStep) {
+                    label.classList.remove('text-slate-300');
+                    label.classList.add('text-teal-600');
+                } else {
+                    label.classList.remove('text-teal-600');
+                    label.classList.add('text-slate-300');
+                }
+            }
+            document.getElementById('mobile-step-num').textContent = currentStep;
+
+            // 3. Button Visibility
+            const prevBtn = document.getElementById('btn-prev');
+            const nextBtn = document.getElementById('btn-next');
+            const submitBtn = document.getElementById('btn-submit');
+            const spacer = document.getElementById('spacer');
+
+            if (currentStep === 1) {
+                prevBtn.classList.add('hidden');
+                spacer.classList.remove('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+                spacer.classList.add('hidden');
+            }
+
+            if (currentStep === totalSteps) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+                submitBtn.classList.add('flex');
+                preparePreview();
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+                submitBtn.classList.remove('flex');
+            }
+
+            // 4. Dynamic Sections in Step 3
+            if (currentStep === 3) {
+                const trainingSec = document.getElementById('section-training');
+                const creativeSec = document.getElementById('section-creative');
+                
+                if (formData.needs.includes('training')) {
+                    trainingSec.classList.remove('hidden');
+                } else {
+                    trainingSec.classList.add('hidden');
+                }
+
+                if (formData.needs.includes('creative')) {
+                    creativeSec.classList.remove('hidden');
+                } else {
+                    creativeSec.classList.add('hidden');
+                }
+            }
+        }
+
+        function preparePreview() {
+            // Collect standard inputs
+            const fields = ['companyName', 'contactName', 'email', 'phone', 'budget', 'startDate', 'memo'];
+            fields.forEach(id => {
+                const val = document.getElementById(id).value;
+                const displayEl = document.getElementById(`preview-${id}`);
+                
+                // Special handling for budget text map
+                if (id === 'budget') {
+                   const map = {
+                       'fixed': '已有專案預算',
+                       'flexible': '預算彈性/報價單',
+                       'govt': '依據公部門標準'
+                   };
+                   displayEl.textContent = map[val] || '-';
+                } else {
+                   displayEl.textContent = val || (id === 'memo' ? '無' : '-');
+                }
+            });
+
+            // Needs Badges
+            const needsContainer = document.getElementById('preview-needs');
+            needsContainer.innerHTML = '';
+            if (formData.needs.length === 0) {
+                needsContainer.innerHTML = '<span class="text-slate-400">未選擇</span>';
+            } else {
+                if (formData.needs.includes('training')) {
+                    needsContainer.innerHTML += '<span class="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-xs font-bold border border-teal-200">員工手語培訓</span>';
+                }
+                if (formData.needs.includes('creative')) {
+                    needsContainer.innerHTML += '<span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold border border-purple-200">形象影音創意</span>';
+                }
+            }
+        }
+
+        function submitForm() {
+            // Simulate API
+            const submitBtn = document.getElementById('btn-submit');
+            submitBtn.innerHTML = '傳送中...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('main-form-view').classList.add('hidden');
+                document.getElementById('success-view').classList.remove('hidden');
+                document.getElementById('form-container').scrollIntoView({ behavior: 'smooth' });
+            }, 800);
+        }
+    </script>
+</body>
+</html>
