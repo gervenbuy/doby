@@ -27,41 +27,60 @@
         html {
             scroll-behavior: smooth;
         }
-        /* Custom Gradient Text */
-        .text-gradient {
-            background-clip: text;
+        
+        /* 唯美漸層背景設定 (參考名片白色與淺紫) */
+        .theme-gradient-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f0ff 60%, #e4c1f9 100%);
+        }
+        .theme-gradient-section {
+            background: linear-gradient(180deg, #fdfaff 0%, #e4c1f9 100%);
+        }
+        
+        /* 名片品牌色文字漸層 */
+        .brand-text-gradient {
+            background: linear-gradient(to right, #d946ef, #8b5cf6, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #ec4899, #6366f1);
         }
     </style>
 </head>
-<body class="font-sans bg-white text-slate-800">
+<body class="font-sans text-slate-900 theme-gradient-bg min-h-screen">
 
     <!-- 1. Hero Section -->
-    <div class="relative bg-indigo-950 text-white overflow-hidden min-h-[600px] flex items-center" 
-         style="background-image: url('https://i.meee.com.tw/kg9Cjr4.png'); background-size: cover; background-position: center;">
-        <!-- Background Overlay -->
-        <div class="absolute inset-0 bg-indigo-950/80 mix-blend-multiply"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/70 via-indigo-900/60 to-slate-50"></div>
+    <!-- 背景改為淺色系，呼應名片白色底，保留一點圖片質感 -->
+    <div class="relative overflow-hidden min-h-[600px] flex items-center">
+        <!-- Background Image (Optional: Keep texture but lighter) -->
+        <div class="absolute inset-0 z-0 opacity-10" 
+             style="background-image: url('https://i.meee.com.tw/kg9Cjr4.png'); background-size: cover; background-position: center;">
+        </div>
         
+        <!-- Gradient Overlay to ensure lightness -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-purple-100/50 z-0"></div>
+        
+        <!-- Content -->
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center text-center z-10">
-            <span class="inline-block py-1 px-3 rounded-full bg-pink-500/20 text-pink-200 text-sm font-semibold mb-6 border border-pink-500/30">
+            <!-- Tag: Changed from Teal to Purple/Pink style -->
+            <span class="inline-block py-1 px-3 rounded-full bg-purple-100 text-purple-600 text-sm font-bold mb-6 border border-purple-200 shadow-sm">
                 B2B 企業專屬方案
             </span>
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-slate-800">
                 打造共融職場，<br class="hidden md:block" />
-                看見 <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-indigo-300">聲音的力量</span>
+                看見 <span class="brand-text-gradient font-extrabold">聲音的力量</span>
             </h1>
-            <p class="text-lg md:text-xl text-indigo-100 max-w-3xl mb-10">
+            
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mb-10 font-medium">
                 豆比手語 (Doby Sign Language) 提供全方位的企業解決方案。從 ESG 友善職場培訓，
                 到結合 AI 動畫與形象歌曲的創意行銷，協助您的品牌展現多元包容的價值。
             </p>
+            
             <div class="flex flex-col sm:flex-row gap-4">
-                <button onclick="scrollToForm()" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-400 hover:to-indigo-500 text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-pink-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1 border border-white/10">
+                <!-- Primary Button: Pink/Purple Gradient -->
+                <button onclick="scrollToForm()" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-400 hover:to-purple-500 text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-purple-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
                     立即諮詢 / 索取報價 <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </button>
-                <button class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-lg backdrop-blur-sm transition-all border border-white/20">
+                <!-- Secondary Button: Outline Style -->
+                <button class="px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-lg transition-all border border-slate-200 shadow-sm hover:shadow-md hover:text-purple-600">
                     了解更多服務
                 </button>
             </div>
@@ -69,22 +88,22 @@
     </div>
 
     <!-- 2. Services Feature Section -->
-    <div class="py-20 bg-slate-50">
+    <div class="py-20 theme-gradient-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-indigo-950 mb-4">我們為企業提供的兩大核心服務</h2>
-                <p className="text-slate-600 max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">我們為企業提供的兩大核心服務</h2>
+                <p className="text-slate-700 max-w-2xl mx-auto font-medium">
                     無論是內部的人才培育，還是對外的品牌形象建立，我們都能提供最專業的手語相關整合服務。
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Training Card -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-indigo-100 hover:shadow-xl hover:shadow-indigo-100 transition-all duration-300 group hover:-translate-y-2">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="accessibility" class="text-indigo-600 w-8 h-8"></i>
+                <div class="bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-white hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="accessibility" class="text-blue-600 w-8 h-8"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-indigo-950 mb-3">員工手語培訓</h3>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">員工手語培訓</h3>
                     <p class="text-slate-600 mb-6 h-12">
                         針對醫療、金融、服務業量身打造的客製化課程。協助企業落實 ESG 指標，建立友善無障礙的服務環境。
                     </p>
@@ -105,25 +124,25 @@
                 </div>
 
                 <!-- Creative Card -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-indigo-100 hover:shadow-xl hover:shadow-pink-100 transition-all duration-300 group hover:-translate-y-2">
-                    <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="sparkles" class="text-pink-600 w-8 h-8"></i>
+                <div class="bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-white hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="sparkles" class="text-purple-600 w-8 h-8"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-indigo-950 mb-3">形象影音與創意服務</h3>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">形象影音與創意服務</h3>
                     <p class="text-slate-600 mb-6 h-12">
                         結合音樂、視覺設計與最新的 AI 技術。打造獨一無二的企業形象歌曲與手語動畫廣告，抓住社群目光。
                     </p>
                     <div class="space-y-3 pt-4 border-t border-slate-100">
                         <div class="flex items-center gap-2 text-slate-600">
-                            <i data-lucide="check-circle-2" class="text-indigo-500 w-4 h-4 flex-shrink-0"></i>
+                            <i data-lucide="check-circle-2" class="text-purple-500 w-4 h-4 flex-shrink-0"></i>
                             <span>企業形象歌曲 / 廣告 Jingle 製作</span>
                         </div>
                         <div class="flex items-center gap-2 text-slate-600">
-                            <i data-lucide="check-circle-2" class="text-indigo-500 w-4 h-4 flex-shrink-0"></i>
+                            <i data-lucide="check-circle-2" class="text-purple-500 w-4 h-4 flex-shrink-0"></i>
                             <span>AI 動畫結合手語視覺設計</span>
                         </div>
                         <div class="flex items-center gap-2 text-slate-600">
-                            <i data-lucide="check-circle-2" class="text-indigo-500 w-4 h-4 flex-shrink-0"></i>
+                            <i data-lucide="check-circle-2" class="text-purple-500 w-4 h-4 flex-shrink-0"></i>
                             <span>短影音 (Reels/Shorts) 行銷素材</span>
                         </div>
                     </div>
@@ -135,21 +154,19 @@
     <!-- New: Activity Gallery Section -->
     <div class="bg-white py-16 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-indigo-950 text-center mb-4">精彩活動花絮</h2>
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-4">精彩活動花絮</h2>
             <p class="text-slate-500 text-center mb-10">紀錄每一刻充滿溫度的交流與學習</p>
             
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <!-- Large item spanning 2 rows on desktop -->
                 <div class="md:row-span-2 relative group overflow-hidden rounded-xl">
                     <img src="https://i.meee.com.tw/tvKhd4l.jpg" alt="Activity 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-indigo-900/20 group-hover:bg-black/0 transition-colors"></div>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
                 </div>
                 
                 <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
                     <img src="https://i.meee.com.tw/kAkDNK6.jpg" alt="Activity 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 </div>
-                
-                <!-- Removed Z7KaIxf.jpg as requested -->
                 
                 <div class="relative group overflow-hidden rounded-xl h-48 md:h-64">
                     <img src="https://i.meee.com.tw/j7rlO6d.jpg" alt="Activity 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -188,27 +205,27 @@
     </div>
 
     <!-- 3. Form Section -->
-    <div id="form-container" class="py-20 bg-indigo-50/50">
+    <div id="form-container" class="py-20 bg-gradient-to-b from-white to-[#e4c1f9]">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Default View (Form) -->
-            <div id="main-form-view" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-indigo-100">
+            <div id="main-form-view" class="bg-white/80 backdrop-blur-xl p-6 md:p-8 rounded-2xl shadow-lg border border-white/50">
                 <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-indigo-950 mb-2">立即諮詢方案</h2>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-2">立即諮詢方案</h2>
                     <p class="text-slate-500">簡單填寫需求，我們將為您提供客製化建議與報價</p>
                 </div>
 
                 <!-- Progress Bar -->
                 <div class="mb-8">
                     <div class="flex justify-between mb-2 px-2 text-xs font-medium">
-                        <span id="label-step-1" class="hidden sm:block text-pink-600">基本資料</span>
+                        <span id="label-step-1" class="hidden sm:block text-purple-600">基本資料</span>
                         <span id="label-step-2" class="hidden sm:block text-slate-300">需求選擇</span>
                         <span id="label-step-3" class="hidden sm:block text-slate-300">細節填寫</span>
                         <span id="label-step-4" class="hidden sm:block text-slate-300">預算規劃</span>
                         <span id="label-step-5" class="hidden sm:block text-slate-300">確認送出</span>
                     </div>
                     <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
-                        <div id="progress-bar" class="h-full bg-pink-500 transition-all duration-500 ease-out" style="width: 20%"></div>
+                        <div id="progress-bar" class="h-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-500 ease-out" style="width: 20%"></div>
                     </div>
                     <div class="text-right text-xs text-slate-400 mt-1 sm:hidden">
                         步驟 <span id="mobile-step-num">1</span> / 5
@@ -219,12 +236,12 @@
                 <div id="step-1" class="step-content active animate-fadeIn space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">公司/單位名稱 <span class="text-red-500">*</span></label>
-                            <input type="text" id="companyName" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 outline-none transition" placeholder="例如：豆比科技有限公司">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">公司/單位名稱 <span class="text-pink-500">*</span></label>
+                            <input type="text" id="companyName" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition" placeholder="例如：豆比科技有限公司">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">產業類別 <span class="text-red-500">*</span></label>
-                            <select id="industry" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none bg-white">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">產業類別 <span class="text-pink-500">*</span></label>
+                            <select id="industry" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none bg-white">
                                 <option value="">請選擇...</option>
                                 <option value="finance">金融保險業</option>
                                 <option value="medical">醫療護理 / 長照機構</option>
@@ -236,20 +253,20 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">聯絡人姓名 <span class="text-red-500">*</span></label>
-                            <input type="text" id="contactName" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">聯絡人姓名 <span class="text-pink-500">*</span></label>
+                            <input type="text" id="contactName" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">職稱 / 部門 <span class="text-slate-400 text-xs">(選填)</span></label>
-                            <input type="text" id="department" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none" placeholder="例如：人資部 經理">
+                            <input type="text" id="department" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none" placeholder="例如：人資部 經理">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">聯絡電話 <span class="text-red-500">*</span></label>
-                            <input type="tel" id="phone" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">聯絡電話 <span class="text-pink-500">*</span></label>
+                            <input type="tel" id="phone" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">聯絡 Email <span class="text-red-500">*</span></label>
-                            <input type="email" id="email" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">聯絡 Email <span class="text-pink-500">*</span></label>
+                            <input type="email" id="email" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
                         </div>
                     </div>
                 </div>
@@ -259,7 +276,7 @@
                     <h3 class="text-xl font-semibold text-slate-800 text-center mb-6">請問貴單位本次主要的詢問方向是？(可複選)</h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <!-- Training Option -->
-                        <div id="opt-training" onclick="toggleNeed('training')" class="cursor-pointer p-6 rounded-xl border-2 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all">
+                        <div id="opt-training" onclick="toggleNeed('training')" class="cursor-pointer p-6 rounded-xl border-2 border-slate-200 hover:border-purple-300 hover:bg-white transition-all">
                             <div class="flex items-center gap-4 mb-4">
                                 <div id="icon-training" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 transition-colors">
                                     <i data-lucide="users" class="w-5 h-5"></i>
@@ -270,7 +287,7 @@
                         </div>
 
                         <!-- Creative Option -->
-                        <div id="opt-creative" onclick="toggleNeed('creative')" class="cursor-pointer p-6 rounded-xl border-2 border-slate-200 hover:border-pink-300 hover:bg-pink-50 transition-all">
+                        <div id="opt-creative" onclick="toggleNeed('creative')" class="cursor-pointer p-6 rounded-xl border-2 border-slate-200 hover:border-purple-300 hover:bg-white transition-all">
                             <div class="flex items-center gap-4 mb-4">
                                 <div id="icon-creative" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-500 transition-colors">
                                     <i data-lucide="video" class="w-5 h-5"></i>
@@ -285,32 +302,33 @@
                 <!-- Step 3: Details -->
                 <div id="step-3" class="step-content animate-fadeIn space-y-8">
                     <!-- Dynamic Content inserted by JS based on Step 2 -->
-                    <div id="section-training" class="hidden bg-indigo-50 p-6 rounded-xl border border-indigo-200">
-                        <h4 class="text-lg font-bold text-indigo-800 mb-4 flex items-center gap-2">
+                    <div id="section-training" class="hidden bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <h4 class="text-lg font-bold text-teal-800 mb-4 flex items-center gap-2">
                             <i data-lucide="users" class="w-5 h-5"></i> 手語培訓細節需求
                         </h4>
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">主要目的 (可複選)</label>
                                 <div class="grid grid-cols-2 gap-2">
-                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-indigo-200">
-                                        <input type="checkbox" name="trainingPurpose" value="提升服務品質" class="rounded text-indigo-500 focus:ring-indigo-500"> 提升服務品質
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-slate-200">
+                                        <input type="checkbox" name="trainingPurpose" value="提升服務品質" class="rounded text-purple-500 focus:ring-purple-500"> 提升服務品質
                                     </label>
-                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-indigo-200">
-                                        <input type="checkbox" name="trainingPurpose" value="內部員工溝通" class="rounded text-indigo-500 focus:ring-indigo-500"> 內部員工溝通
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-slate-200">
+                                        <input type="checkbox" name="trainingPurpose" value="內部員工溝通" class="rounded text-purple-500 focus:ring-purple-500"> 內部員工溝通
                                     </label>
-                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-indigo-200">
-                                        <input type="checkbox" name="trainingPurpose" value="ESG/DEI 企業文化" class="rounded text-indigo-500 focus:ring-indigo-500"> ESG/DEI 企業文化
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-slate-200">
+                                        <input type="checkbox" name="trainingPurpose" value="ESG/DEI 企業文化" class="rounded text-purple-500 focus:ring-purple-500"> ESG/DEI 企業文化
                                     </label>
-                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-indigo-200">
-                                        <input type="checkbox" name="trainingPurpose" value="員工福利/社團" class="rounded text-indigo-500 focus:ring-indigo-500"> 員工福利/社團
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer hover:bg-white p-2 rounded transition border border-transparent hover:border-slate-200">
+                                        <input type="checkbox" name="trainingPurpose" value="員工福利/社團" class="rounded text-purple-500 focus:ring-purple-500"> 員工福利/社團
                                     </label>
                                 </div>
                             </div>
+
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-medium text-slate-700 mb-1">預計人數</label>
-                                    <select id="trainingSize" class="w-full p-2 border border-slate-300 rounded focus:ring-indigo-500 outline-none bg-white">
+                                    <select id="trainingSize" class="w-full p-2 border border-slate-300 rounded focus:ring-purple-500 outline-none bg-white">
                                         <option value="">請選擇</option>
                                         <option value="1-5">1~5人 (家教/小組)</option>
                                         <option value="6-20">6~20人 (工作坊)</option>
@@ -318,22 +336,31 @@
                                         <option value="50+">50人以上 (大型講座)</option>
                                     </select>
                                 </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1">上課類型 <span class="text-xs text-purple-600 font-bold">(NEW)</span></label>
+                                    <select id="trainingType" class="w-full p-2 border border-slate-300 rounded focus:ring-purple-500 outline-none bg-white">
+                                        <option value="">請選擇</option>
+                                        <option value="單次體驗工作坊">單次體驗工作坊</option>
+                                        <option value="短期密集班 (4-8堂)">短期密集班 (4-8堂)</option>
+                                        <option value="長期帶狀課程">長期帶狀課程</option>
+                                    </select>
+                                </div>
+
                                 <div>
                                     <label class="block text-sm font-medium text-slate-700 mb-1">偏好形式</label>
-                                    <select id="trainingFormat" class="w-full p-2 border border-slate-300 rounded focus:ring-indigo-500 outline-none bg-white">
+                                    <select id="trainingFormat" class="w-full p-2 border border-slate-300 rounded focus:ring-purple-500 outline-none bg-white">
                                         <option value="">請選擇</option>
-                                        <option value="workshop">單次體驗工作坊</option>
-                                        <option value="short-term">短期密集班 (4-8堂)</option>
-                                        <option value="long-term">長期帶狀課程</option>
-                                        <option value="online">線上視訊</option>
+                                        <option value="實體課程">實體課程</option>
+                                        <option value="線上視訊">線上視訊</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div id="section-creative" class="hidden bg-pink-50 p-6 rounded-xl border border-pink-200">
-                        <h4 class="text-lg font-bold text-pink-800 mb-4 flex items-center gap-2">
+                    <div id="section-creative" class="hidden bg-purple-50 p-6 rounded-xl border border-purple-200">
+                        <h4 class="text-lg font-bold text-purple-800 mb-4 flex items-center gap-2">
                             <i data-lucide="music" class="w-5 h-5"></i> 影音創意方案選擇
                         </h4>
                         <div class="space-y-6">
@@ -358,10 +385,10 @@
                                 </div>
                             </div>
                             <!-- Plan B -->
-                            <div class="bg-white p-4 rounded-lg shadow-sm border border-pink-100">
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-purple-100">
                                 <div class="flex items-center gap-2 mb-2">
                                     <h5 class="font-bold text-slate-800">方案 B：形象歌＋AI動畫＋手語視覺</h5>
-                                    <span class="px-2 py-0.5 bg-gradient-to-r from-pink-500 to-indigo-500 text-white text-xs rounded-full">熱門推薦</span>
+                                    <span class="px-2 py-0.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs rounded-full">熱門推薦</span>
                                 </div>
                                 <p class="text-xs text-slate-500 mb-3">結合 AI 生成動畫與專業手語視覺設計，全方位感官體驗。</p>
                                 <div class="flex flex-wrap gap-2">
@@ -383,17 +410,17 @@
                             <div>
                                 <label class="block text-sm font-medium text-slate-700 mb-2">主要用途 (可複選)</label>
                                 <div class="flex flex-wrap gap-2">
-                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-pink-300 transition">
-                                        <input type="checkbox" name="creativeUsage" value="社群廣告 (FB/IG/YT)" class="rounded text-pink-500 focus:ring-pink-500"> 社群廣告 (FB/IG/YT)
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-purple-300 transition">
+                                        <input type="checkbox" name="creativeUsage" value="社群廣告 (FB/IG/YT)" class="rounded text-purple-500 focus:ring-purple-500"> 社群廣告 (FB/IG/YT)
                                     </label>
-                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-pink-300 transition">
-                                        <input type="checkbox" name="creativeUsage" value="官網形象" class="rounded text-pink-500 focus:ring-pink-500"> 官網形象
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-purple-300 transition">
+                                        <input type="checkbox" name="creativeUsage" value="官網形象" class="rounded text-purple-500 focus:ring-purple-500"> 官網形象
                                     </label>
-                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-pink-300 transition">
-                                        <input type="checkbox" name="creativeUsage" value="線下門市播放" class="rounded text-pink-500 focus:ring-pink-500"> 線下門市播放
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-purple-300 transition">
+                                        <input type="checkbox" name="creativeUsage" value="線下門市播放" class="rounded text-purple-500 focus:ring-purple-500"> 線下門市播放
                                     </label>
-                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-pink-300 transition">
-                                        <input type="checkbox" name="creativeUsage" value="內部尾牙/活動" class="rounded text-pink-500 focus:ring-pink-500"> 內部尾牙/活動
+                                    <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer bg-white px-3 py-1 rounded border border-slate-200 hover:border-purple-300 transition">
+                                        <input type="checkbox" name="creativeUsage" value="內部尾牙/活動" class="rounded text-purple-500 focus:ring-purple-500"> 內部尾牙/活動
                                     </label>
                                 </div>
                             </div>
@@ -405,8 +432,8 @@
                 <div id="step-4" class="step-content animate-fadeIn space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">預算規劃模式 <span class="text-red-500">*</span></label>
-                            <select id="budget" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none bg-white">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">預算規劃模式 <span class="text-pink-500">*</span></label>
+                            <select id="budget" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none bg-white">
                                 <option value="">請選擇...</option>
                                 <option value="fixed">已有專案預算</option>
                                 <option value="flexible">預算彈性，請提供報價單</option>
@@ -415,24 +442,24 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">期望開始時間</label>
-                            <input type="text" id="startDate" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none" placeholder="例如：2023年11月 或 下個月">
+                            <input type="text" id="startDate" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none" placeholder="例如：2023年11月 或 下個月">
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-slate-700 mb-1">其他備註或需求</label>
-                        <textarea id="memo" rows="4" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none" placeholder="若有特殊需求、指定講師或既有吉祥物設定，請在此說明..."></textarea>
+                        <textarea id="memo" rows="4" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none" placeholder="若有特殊需求、指定講師或既有吉祥物設定，請在此說明..."></textarea>
                     </div>
                 </div>
 
                 <!-- Step 5: Preview & Submit -->
                 <div id="step-5" class="step-content animate-fadeIn space-y-6">
                     <h3 class="text-xl font-bold text-slate-800 text-center mb-6 flex items-center justify-center gap-2">
-                        <i data-lucide="file-text" class="text-pink-500 w-6 h-6"></i>
+                        <i data-lucide="file-text" class="text-purple-500 w-6 h-6"></i>
                         確認您的需求資訊
                     </h3>
                     
-                    <div class="bg-indigo-50/50 p-6 rounded-xl border border-indigo-100 space-y-4 text-sm shadow-inner">
-                        <div class="grid md:grid-cols-2 gap-4 pb-4 border-b border-indigo-100">
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4 text-sm shadow-inner">
+                        <div class="grid md:grid-cols-2 gap-4 pb-4 border-b border-slate-200">
                             <div><span class="text-slate-500">公司名稱：</span><br/><span id="preview-companyName" class="font-medium text-slate-800 text-base">-</span></div>
                             <div><span class="text-slate-500">聯絡人：</span><br/><span id="preview-contactName" class="font-medium text-slate-800 text-base">-</span></div>
                             <div><span class="text-slate-500">Email：</span><br/><span id="preview-email" class="font-medium text-slate-800">-</span></div>
@@ -477,11 +504,11 @@
                     <!-- Spacer for layout when prev button hidden -->
                     <div id="spacer" class="block"></div> 
 
-                    <button id="btn-next" onclick="changeStep(1)" class="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-indigo-950 text-white hover:bg-indigo-900 transition shadow-lg shadow-indigo-200">
+                    <button id="btn-next" onclick="changeStep(1)" class="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition shadow-lg shadow-slate-200">
                         下一步 <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </button>
                     
-                    <button id="btn-submit" onclick="submitForm()" class="hidden flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-indigo-600 text-white font-bold hover:from-pink-400 hover:to-indigo-500 transition shadow-lg shadow-pink-200 hover:shadow-pink-300">
+                    <button id="btn-submit" onclick="submitForm()" class="hidden flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold hover:shadow-lg transition">
                         確認送出 <i data-lucide="send" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -506,7 +533,7 @@
     </div>
 
     <!-- 4. Footer -->
-    <footer class="bg-indigo-950 text-indigo-200 py-12 border-t border-indigo-900">
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-sm">
             <div>
                 <h4 class="text-white text-lg font-bold mb-4">豆比手語 Doby Sign Language</h4>
@@ -517,7 +544,6 @@
                 <div class="space-y-2">
                     <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> 0958315134</p>
                     <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> taiwandeafarts@gmail.com</p>
-                    <!-- Address Removed -->
                 </div>
             </div>
             <div>
@@ -530,7 +556,7 @@
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-indigo-900 text-center text-xs text-indigo-400">
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-slate-800 text-center text-xs">
             &copy; <span id="year"></span> Doby Sign Language Service. All rights reserved.
         </div>
     </footer>
@@ -564,29 +590,27 @@
                 formData.needs.push(type);
                 // Styles for Active state
                 element.classList.remove('border-slate-200');
-                if (type === 'training') {
-                    element.classList.add('border-indigo-500', 'bg-indigo-50', 'ring-1', 'ring-indigo-500');
-                    icon.classList.remove('bg-slate-100', 'text-slate-500');
-                    icon.classList.add('bg-indigo-500', 'text-white');
-                } else {
-                    element.classList.add('border-pink-500', 'bg-pink-50', 'ring-1', 'ring-pink-500');
-                    icon.classList.remove('bg-slate-100', 'text-slate-500');
-                    icon.classList.add('bg-pink-500', 'text-white');
-                }
+                element.classList.add(type === 'training' ? 'border-purple-500' : 'border-pink-500');
+                element.classList.add(type === 'training' ? 'bg-purple-50' : 'bg-pink-50');
+                element.classList.add('ring-1');
+                element.classList.add(type === 'training' ? 'ring-purple-500' : 'ring-pink-500');
+                
+                icon.classList.remove('bg-slate-100', 'text-slate-500');
+                icon.classList.add(type === 'training' ? 'bg-purple-500' : 'bg-pink-500');
+                icon.classList.add('text-white');
             } else {
                 // Remove
                 formData.needs.splice(index, 1);
                 // Styles for Inactive state
                 element.classList.add('border-slate-200');
-                if (type === 'training') {
-                    element.classList.remove('border-indigo-500', 'bg-indigo-50', 'ring-1', 'ring-indigo-500');
-                    icon.classList.add('bg-slate-100', 'text-slate-500');
-                    icon.classList.remove('bg-indigo-500', 'text-white');
-                } else {
-                    element.classList.remove('border-pink-500', 'bg-pink-50', 'ring-1', 'ring-pink-500');
-                    icon.classList.add('bg-slate-100', 'text-slate-500');
-                    icon.classList.remove('bg-pink-500', 'text-white');
-                }
+                element.classList.remove(type === 'training' ? 'border-purple-500' : 'border-pink-500');
+                element.classList.remove(type === 'training' ? 'bg-purple-50' : 'bg-pink-50');
+                element.classList.remove('ring-1');
+                element.classList.remove(type === 'training' ? 'ring-purple-500' : 'ring-pink-500');
+
+                icon.classList.add('bg-slate-100', 'text-slate-500');
+                icon.classList.remove(type === 'training' ? 'bg-purple-500' : 'bg-pink-500');
+                icon.classList.remove('text-white');
             }
             hideError();
         }
@@ -595,24 +619,24 @@
         document.querySelectorAll('input[name="planA_Music"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
                 document.querySelectorAll('.plan-a-opt').forEach(el => {
-                    el.classList.remove('bg-pink-500', 'text-white', 'border-pink-500');
+                    el.classList.remove('bg-purple-500', 'text-white', 'border-purple-500');
                     el.classList.add('bg-slate-50', 'text-slate-600', 'border-slate-200');
                 });
                 const label = e.target.parentElement;
                 label.classList.remove('bg-slate-50', 'text-slate-600', 'border-slate-200');
-                label.classList.add('bg-pink-500', 'text-white', 'border-pink-500');
+                label.classList.add('bg-purple-500', 'text-white', 'border-purple-500');
             });
         });
 
         document.querySelectorAll('input[name="planB_AI"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
                 document.querySelectorAll('.plan-b-opt').forEach(el => {
-                    el.classList.remove('bg-pink-500', 'text-white', 'border-pink-500');
+                    el.classList.remove('bg-purple-500', 'text-white', 'border-purple-500');
                     el.classList.add('bg-slate-50', 'text-slate-600', 'border-slate-200');
                 });
                 const label = e.target.parentElement;
                 label.classList.remove('bg-slate-50', 'text-slate-600', 'border-slate-200');
-                label.classList.add('bg-pink-500', 'text-white', 'border-pink-500');
+                label.classList.add('bg-purple-500', 'text-white', 'border-purple-500');
             });
         });
 
@@ -676,9 +700,9 @@
                 const label = document.getElementById(`label-step-${i}`);
                 if (i <= currentStep) {
                     label.classList.remove('text-slate-300');
-                    label.classList.add('text-pink-600');
+                    label.classList.add('text-purple-600');
                 } else {
-                    label.classList.remove('text-pink-600');
+                    label.classList.remove('text-purple-600');
                     label.classList.add('text-slate-300');
                 }
             }
@@ -755,7 +779,7 @@
                 needsContainer.innerHTML = '<span class="text-slate-400">未選擇</span>';
             } else {
                 if (formData.needs.includes('training')) {
-                    needsContainer.innerHTML += '<span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold border border-indigo-200">員工手語培訓</span>';
+                    needsContainer.innerHTML += '<span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold border border-purple-200">員工手語培訓</span>';
                 }
                 if (formData.needs.includes('creative')) {
                     needsContainer.innerHTML += '<span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-xs font-bold border border-pink-200">形象影音創意</span>';
